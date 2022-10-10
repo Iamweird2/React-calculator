@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #e6e6e6;
+  color: black;
+}
+
+.calc-body {
+  max-width: 85%;
+  display: grid;
+  grid-template-rows: minmax(7rem,auto) auto;
+  gap: 20px;
+}
+
+.output-container {
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  text-align: right;
+  padding: 10px 20px; 
+  grid-column: 1/-1;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.previous-operation {
+  flex-basis: 50%;
+  font-size: 20px;
+}
+.current-operation {
+  flex-basis: 50%;
+  font-size: 30px;
+}
+.calc-buttons {
+  border-radius: 10px;
+  background-color: #d3cdcd;
+  padding: 20px;
+  gap: 15px;
+  display: grid;
+  grid-column: 1/-1;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.btn {
+  background-color: #e5e4e0;
+  color: white;
+  display: grid;
+  place-content: center;
+  padding-block: 12px;
+  padding-inline: 8px;
+  border-radius: 7px;
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px #aa9f94;
+}
+.btn:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+.btn:active{
+  transform: translateY(4px);
+  box-shadow: 0 1px #aa9f94;
+}
+.span-two {
+  grid-column: span 2;
+}
+.del,
+.reset {
+  font-size: 20px;
+  background-color: #388187;
+  color: white;
+  box-shadow: 0 4px #1d636a;
+}
+.del:hover,
+.reset:hover {
+  background-color: #61b4bd;
+}
+.equals {
+  background-color: #c85401;
+  box-shadow: 0 4px #8a3b03;
+  color: white;
+}
+.equals:hover {
+  background-color: #fe8b38;
+}
+/* theme dark */
+
+.app.dark{
+  background-color: hsl(222, 26%, 31%);
+  
+}
+.app.dark .output-container{
+  background-color: hsl(224, 36%, 15%);
+  color: white;
+}
+.app.dark .toggle-container{
+  background-color: hsl(223, 31%, 20%);
+}
+.app.dark  .calc-buttons{
+  background-color: hsl(223, 31%, 20%);
+}
+.app.dark .btn{
+  color: hsl(221, 14%, 31%);
+}
+.app.dark .del,
+.app.dark .reset{
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0 4px hsl(224, 28%, 35%);
+  color: white;
+}
+.app.dark .equals{
+  background-color: hsl(6, 63%, 50%);
+  box-shadow: 0 4px hsl(6, 70%, 34%);
+  color: white;
+}
+
+/* theme violet */
+.app.violet{
+  background-color: hsl(268, 75%, 9%);
+  color: hsl(52, 100%, 62%);
+  
+}
+
+.app.violet .output-container{
+  background-color:  hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
+}
+.app.violet .toggle-container{
+  background-color:  hsl(268, 71%, 12%);
+}
+.app.violet .toggle-circle{
+  background-color: hsl(176, 100%, 44%);
+}
+.app.violet  .calc-buttons{
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0 4px hsl(285, 91%, 52%);
+}
+.app.violet .btn{
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0 4px hsl(290, 70%, 36%);
+  color: hsl(52, 100%, 62%);
+}
+.app.violet .del,
+.app.violet .reset{
+  background-color: hsl(268, 47%, 21%);
+  box-shadow: 0 4px hsl(290, 70%, 36%);
+  color: white;
+}
+.app.violet .equals{
+  background-color: hsl(176, 100%, 44%);
+  box-shadow: 0 4px hsl(177, 92%, 70%);
+  color: black;
+}
+
+@media (min-width: 765px){
+  .calc-body{
+    width: 50%;
+  }
+}
+@media (min-width: 1000px){
+  .calc-body{
+    width: 30%;
+  }
+}
